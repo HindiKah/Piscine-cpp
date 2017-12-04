@@ -20,7 +20,6 @@
 
 #include <iostream>
 
-using namespace std;
 
 class Birthday
 {
@@ -39,11 +38,11 @@ class Adress
 {
 	public:
 	int number;
-	string street;
+	std::string street;
 	int postal_code;
-	string city;
+	std::string city;
 
-	Adress(int n, string s, int p_c, string c);
+	Adress(int n, std::string s, int p_c, std::string c);
 	~Adress(void);
 
 	void	print(void) const;
@@ -53,17 +52,17 @@ class Repertorie
 {
 	public :
 		int		init;
-		string	firstname;
-		string	lastname;
-		string	nickname;
-		string	login;
-		string	email_adress;
-		string	underwear_color;
-		string	darkest_secret;
-		string	phone_number;
-		string	birthday;
-		string	postal_adress;
-		string	favourite_meal;
+		std::string	firstname;
+		std::string	lastname;
+		std::string	nickname;
+		std::string	login;
+		std::string	email_adress;
+		std::string	underwear_color;
+		std::string	darkest_secret;
+		std::string	phone_number;
+		std::string	birthday;
+		std::string	postal_adress;
+		std::string	favourite_meal;
 
 		Repertorie(void);
 		~Repertorie(void);

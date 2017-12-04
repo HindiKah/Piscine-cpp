@@ -1,4 +1,4 @@
-C++ = g++
+C++ = clang++
 
 C++FLAGS = -Wall -Wno-used -Werror -Wextra
 

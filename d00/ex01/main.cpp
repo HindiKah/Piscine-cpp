@@ -17,11 +17,10 @@
  */
 #include "hclass.repertorie.hpp"
 
-using namespace std;
 
 void	display_help(void)
 {
-	std::cout << "Error: not a valid command (ADD/SEARSH/EXIT)" << endl;
+	std::cout << "Error: not a valid command (ADD/SEARSH/EXIT)" << std::endl;
 }
 
 /*
@@ -126,7 +125,7 @@ void	add_contact(Repertorie *my_repertorie)
 		i++;
 	if (i == 8)
 	{
-		cout << "The repertorie is full" << endl;
+		std::cout << "The repertorie is full" << std::endl;
 		return;
 	}
 	my_repertorie[i].add_contact(i);
@@ -135,19 +134,21 @@ void	add_contact(Repertorie *my_repertorie)
 int cin_int(void)
 {
 	int n;
-	cin >> n;
-	while (cin.fail())
+	std::cin >> n;
+	while (std::cin.fail())
 	{
-		cin.clear();
-		cin.ignore();
-		cout << "Not a valid number. Please reenter: ";
-		cin >> n;
+		std::cin.clear();
+		std::cin.ignore();
+		std::cout << "Not a valid number. Please reenter: ";
+		std::cin >> n;
 	}
 	return n;
 }
 
 void	searsh_contact(Repertorie *my_repertorie)
 {
+	using std::cout;
+	using std::endl;
 	int i = 0;
 	int choose = -1;
 	while (my_repertorie[i].init >= 0)
@@ -171,6 +172,9 @@ void	searsh_contact(Repertorie *my_repertorie)
 
 int main()
 {
+	using std::cout;
+	using std::cin;
+	using std::endl;
 	Repertorie		my_repertorie[8];
 	int				i = 0;
 	std::string		buff;
@@ -179,7 +183,7 @@ int main()
 	while (i >= 0 && buff != "EXIT")
 	{
 
-		std::cout << "Please enter a command (ADD/SEARCH/EXIT):" << endl;
+		cout << "Please enter a command (ADD/SEARCH/EXIT):" << endl;
 		cin >> buff;
 		if (buff == "ADD")
 			add_contact(my_repertorie);

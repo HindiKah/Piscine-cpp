@@ -20,7 +20,6 @@
 #include <string>
 #include <iomanip>
 
-using namespace std;
 
 Repertorie::Repertorie(void) : init(-1)
 {
@@ -58,7 +57,7 @@ void		Repertorie::add_contact(int index)
 	this->init = index;
 }
 
-void		resize(const string word)
+void		resize(const std::string word)
 {
 	char	tmp[11];
 	int		len = word.size();
@@ -67,18 +66,18 @@ void		resize(const string word)
 	if (len > 10)
 		tmp[9] = '.';
 	tmp[10] = '\0';
-	cout << std::setfill(' ') << std::setw(10) << tmp;
+	std::cout << std::setfill(' ') << std::setw(10) << tmp;
 }
 
-void		print_one(string param)
+void		print_one(std::string param)
 {
 	resize(param);
-	cout << "|";
+	std::cout << "|";
 }
 
 void		Repertorie::print_full(void) const
 {
-	print_one(to_string(this->init));
+	print_one(std::to_string(this->init));
 	print_one(this->firstname);
 	print_one(this->lastname);
 	print_one(this->nickname);
@@ -90,12 +89,12 @@ void		Repertorie::print_full(void) const
 	print_one(this->phone_number);
 	print_one(this->birthday);
 	print_one(this->postal_adress);
-	cout << endl;
+	std::cout << std::endl;
 }
 
 void		Repertorie::print_small(void) const
 {
-	print_one(to_string(this->init));
+	print_one(std::to_string(this->init));
 	print_one(this->firstname);
 	print_one(this->lastname);
 	print_one(this->nickname);
